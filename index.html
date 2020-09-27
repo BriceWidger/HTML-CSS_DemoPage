@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+/*overlay effect body*/
+body { 
+text-align: center; 
+} 
+
+h1 { 
+color: green; 
+} 
+
+.container { 
+position: relative; 
+width: 400px; 
+height: auto; 
+} 
+
+.overlay { 
+position: absolute; 
+transition: all 0.3s ease; 
+opacity: 0; 
+background-color: #9bcd9b; 
+} 
+
+.container:hover .overlay { 
+opacity: 1; 
+} 
+
+.overlayFade { 
+height: 250px; 
+width: 250px; 
+top: 0;
+left: 300px; /*moves all images horizontally*/ 
+background-color: black; 
+}
+
+/*inline-block padding and color*/
+nav a {
+display: inline-block;
+padding: 50px;
+width: 200px;
+background: white;
+
+}
+
+/*typewriter effect body*/
+body{
+padding: 40px;
+background-color: #121212;  
+}
+
+/*cursor structure*/
+p {
+border-right: solid 3px rgba(0,255,0,.75);
+white-space: nowrap;
+overflow: hidden;    
+font-family: 'Source Code Pro', monospace;  
+font-size: 28px;
+color: rgba(255,255,255,.70);
+margin: 0 auto;
+}
+/* Animation */
+p {
+animation: animated-text 4s steps(29,end) 1s 1 normal both,
+animated-cursor 600ms steps(29,end) infinite;
+}
+
+/* text animation */
+@keyframes animated-text{
+from{width: 0;}
+to{width: 705px;}
+}
+/* cursor animations */
+@keyframes animated-cursor{
+from{border-right-color: rgba(0,255,0,.75);}
+to{border-right-color: transparent;}
+}
+
+/*center text vertically and horizontally "I'm Brice'"*/
+.container {
+position: absolute;
+top: 50%;
+left: 50%;
+-moz-transform: translateX(-50%) translateY(-50%);
+-webkit-transform: translateX(-50%) translateY(-50%);
+/*horizontal alignment*/
+transform: translateX(-90%) translateY(-90%); 
+color: white;
+}
+
+/*center text vertically and horizontally "click around"*/
+.container_a {
+position: absolute;
+top: 60%;
+left: 50%;
+-moz-transform: translateX(-50%) translateY(-50%);
+-webkit-transform: translateX(-50%) translateY(-50%);
+/*horizontal alignment*/
+transform: translateX(-50%) translateY(-50%); 
+color: white;
+}
+</style>
+
+<!-- JavaScript for delay appearance text -->
+<script>
+window.onload = function(){
+var theDelay = 7;
+var timer = setTimeout("showText()",theDelay*1000)
+}
+function showText(){
+document.getElementById("delayedText").style.visibility = "visible";
+}
+</script>
+</head>
+
+<!-- body -->
+<body style="background-color:black;">
+    
+<!-- typing animation text -->
+<div class="container">
+<p><span>Hello. I'm Brice, and this is my web page.</span></p>
+</div>
+
+<!-- delay appearance text -->
+<div class="container_a" id="delayedText" style="visibility:hidden; color:grey; 
+font-family: 'Source Code Pro', monospace;">Click around.
+</div>
+
+<nav>
+<!-- GitHub overlay -->
+<div style = "position:relative; left:420px; top:25px;" 
+class="container"> 
+<div class="overlay overlayFade">
+<a href="https://github.com/BriceWidger" style="font-family: Algerian;
+font-size: 36px;">GitHub</a>
+</div> 
+</div> 
+
+<!-- aboutme overlay -->
+<div style = "position:relative; left:820px; top:25px;" 
+class="container"> 
+<div class="overlay overlayFade">
+<a href="AboutMe.jsp" style="font-family: Algerian; font-size: 36px;">About Me
+</a>
+</div> 
+</div>
+
+<!-- pro demo page overlay -->
+<div style = "position:relative; left:1220px; top:25px;" 
+class="container"> 
+<div class="overlay overlayFade">
+<a href="ProDemoPage.jsp" style="font-family: Algerian; font-size: 36px;">
+Demo Page</a>
+</div> 
+</div>
+</nav>
+</body> 
+</html>
